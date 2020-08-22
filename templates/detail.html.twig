@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Úprava/vložení kontaktu{% endblock %}
+
+{% block body %}
+	<a href="{{ path('index') }}">
+		Zpět na seznam
+	</a>
+	{{ form(form) }}
+	{% if contact.slug %}
+		<a href="{{ path('contact_delete', {slug: contact.slug}) }}">
+			Smazat
+		</a>
+	{% endif %}
+{% endblock %}

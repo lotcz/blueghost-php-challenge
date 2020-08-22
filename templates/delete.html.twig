@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Smazání kontaktu{% endblock %}
+
+{% block body %}
+	<div>
+		Opravdu si přejete smazat kontakt osoby <strong>{{contact.name}}</strong>?
+	</div>
+	<div>
+		<form method="POST">
+			<a href="{{ path('contact_show', {slug: contact.slug}) }}">
+				Zpět
+			</a>
+			<input type="submit" value="Smazat" />
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seznam{% endblock %}
+
+{% block body %}
+	<a href="{{ path('contact_show') }}">
+		Přidat kontakt
+	</a>
+
+	<table>
+		<thead>
+			<tr>
+				<th>
+					Jméno
+				</th>
+				<th>
+					Telefon
+				</th>
+				<th>
+					Email
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for contact in contacts %}
+				<tr>
+					<th>
+						<a href="{{ path('contact_show', {slug: contact.slug}) }}">
+							{{ contact.name }}
+						</a>
+					</th>
+					<th>
+						{{ contact.phone }}
+					</th>
+					<th>
+						{{ contact.email }}
+					</th>
+				</tr>
+			{% else %}
+				Seznam je prázdný.
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
