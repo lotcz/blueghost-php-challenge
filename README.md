@@ -19,6 +19,11 @@ Before running the application, run database migrations to create schema:
 
     php bin/console doctrine:migrations:migrate
 
+## Run web application
+
+Starting root directory is `/public`. Point your webserver here.
+
+You might need to adjust `.htaccess` file based on your webserver configuration.
 
 ## Development
 
@@ -30,10 +35,4 @@ To check for PHP errors and alike run this:
 
 ### Run tests
 
-    bin\phpunit tests
-
-### Create migration
-
-After changing the schema, create database migration with this command:
-
-    php bin/console make:migration
+    php bin\phpunit tests
